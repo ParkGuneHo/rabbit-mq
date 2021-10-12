@@ -2,7 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: rabbitmq
-  namespace: sellers
+  namespace: team1
 spec:
   replicas: 1
   selector:
@@ -20,7 +20,7 @@ spec:
             claimName: rabbitmq-data-claim
       containers:
         - name: rabbitmq
-          image: suhyung007/sellers:rabbit-1
+          image: chump1/sellers:rabbit-1
           ports:
             - name: management
               containerPort: 15672

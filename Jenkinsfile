@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    registry = "uni-shpark/sellers"
+    registry = "ParkGuneHo/rabbit-mq"
     dockerImage = ""
   }
 
@@ -12,7 +12,7 @@ pipeline {
     stage('Checkout Source') {
       steps {
         echo "Checkout Source START"
-        git 'https://github.com/uni-shpark/rabbit-mq.git'
+        git 'https://github.com/ParkGuneHo/rabbit-mq.git'
         echo "Checkout Source END"
       }
     }
@@ -21,7 +21,7 @@ pipeline {
       steps{
         script {
           echo "Build image START $BUILD_NUMBER"
-          dockerImage = docker.build("suhyung007/sellers:rabbit-$BUILD_NUMBER")
+          dockerImage = docker.build("chump1/sellers:rabbit-$BUILD_NUMBER")
           echo "Build image END"
         }
       }
